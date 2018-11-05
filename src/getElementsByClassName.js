@@ -9,21 +9,21 @@ var getElementsByClassName = function(className) {
 var arr =[];
 var obj = document.body;
 
-  var findElements = function(htmlEl) { //helper func
-    if (htmlEl.classList.contains(className)) {
-      arr.push(htmlEl);
-    } 
+  var findElements = function(htmlEl) { //helper function
+
+    if(htmlEl.classList !== undefined) {
+
+      if (htmlEl.classList.contains(className)) {
+        arr.push(htmlEl);
+      } 
+    }
       
-    for (var i = 0; i < htmlEl.children.length; i++) {
-      findElements(htmlEl.children[i]);
+    for (var i = 0; i < htmlEl.childNodes.length; i++) {
+      findElements(htmlEl.childNodes[i]);
     }
   
-}
+  }
 
   findElements(obj);
-
-  //console.log(obj);
-  //console.log(arr);
   return arr;
-
 };

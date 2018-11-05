@@ -23,3 +23,8 @@ var stringifyJSON = function(obj) {
     return '{' + array.join() + '}'; //convert arr to string
   }
 };
+
+// var str = '';
+// str += obj;
+// str = str + obj;
+
